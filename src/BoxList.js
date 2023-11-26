@@ -7,14 +7,14 @@ const BoxList = () => {
     const [boxes, setBoxes] = useState([]);
 
     const removeBox = id => {
-        setBoxes(boxes => boxes.filter(box => box.id != id ));
+        setBoxes(boxes => boxes.filter(box => box.id !== id ));
     }
 
     const renderBoxes = () => {
         return (
             <div>
                 {boxes.map(box => (
-                    <Box boxWidth={box.width} 
+                    <Box key={box.id} boxId = {box.id} boxWidth={box.width} 
                     boxHeight = {box.height} boxColor = {box.color} removeBox={removeBox}/>
                 ))}
             </div>

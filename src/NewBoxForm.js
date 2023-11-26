@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { v4 as uuid } from "uuid";
 
 
 
@@ -11,7 +10,7 @@ import { v4 as uuid } from "uuid";
  */
 
 const NewBoxForm = ({ addBox }) => {
-    const INITIAL_STATE = { height: 0, width: 0, color: "" };
+    const INITIAL_STATE = { height: 0, width: 0, color: "#000000" };
     const [formData, setFormData] = useState(INITIAL_STATE);
   
     /** Send {height, width, color} to parent
@@ -60,7 +59,6 @@ const NewBoxForm = ({ addBox }) => {
           type="color"
           id="color"
           name="color"
-          value={formData.color}
           onChange={handleChange}
         />
   

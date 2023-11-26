@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 
 
-const Box = ({boxColor, boxHeight, boxWidth, removeBox}) => {
+const Box = ({boxId = 1, boxColor="#000", boxHeight=100, boxWidth=100, removeBox}) => {
 
     const boxStyle = {
-        color:boxColor,
-        height:boxHeight,
-        width:boxWidth
+        backgroundColor:boxColor,
+        height:boxHeight+"px",
+        width:boxWidth+"px"
     };
 
     return (
-        <div style={boxStyle}>
-            <button className="RemoveButton" onClick={removeBox}>X</button>
+        <div style={boxStyle} >
+            <button className="RemoveButton" onClick={()=>removeBox(boxId)}>X</button>
         </div>
     );
 }
