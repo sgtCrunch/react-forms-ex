@@ -43,10 +43,10 @@ it("works when adding multiple new boxes on load", function(){
         container.querySelector("Box")
     ).not.toBeInTheDocument();
 
-    const heightInput = getByLabelText("Height:");
-    const widthInput = getByLabelText("Width:");
-    const colorInput = getByLabelText("Color:");
-    const submitBtn = queryByText("Add a new box!")
+    const heightInput = container.getByLabelText("Height:");
+    const widthInput = container.getByLabelText("Width:");
+    const colorInput = container.getByLabelText("Color:");
+    const submitBtn = container.queryByText("Add a new box!")
 
     // fill out the form
     fireEvent.change(heightInput, { target: { value: 100 }});
